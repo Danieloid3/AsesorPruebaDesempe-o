@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+openai
+supabase
+redis
+pydantic
+pydantic-settings
+tiktoken
+langchain-text-splitters
+python-dotenv

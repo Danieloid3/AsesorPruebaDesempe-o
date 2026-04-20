@@ -1,0 +1,44 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/hello/User
+Accept: application/json
+
+###
+
+### Test the main chat endpoint
+POST http://localhost:8000/api/v1/chat
+Content-Type: application/json
+
+{
+  "message": "Hola",
+  "user_id": "test_user_1",
+  "channel": "postman_test"
+}
+
+### Test english courses question
+POST http://localhost:8000/api/v1/chat
+Content-Type: application/json
+
+{
+  "message": "quiero saber de los cursos de ingles",
+  "user_id": "test_user_1",
+  "channel": "postman_test"
+}
+
+### Test contextual follow up question
+POST http://localhost:8000/api/v1/chat
+Content-Type: application/json
+
+{
+  "message": "si, los precios",
+  "user_id": "test_user_1",
+  "channel": "postman_test"
+}
+
+### Read standard metrics
+GET http://localhost:8000/api/v1/metrics

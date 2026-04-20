@@ -1,0 +1,201 @@
+{
+  "name": "Asesor AI - Multicanal MVP (Corregido)",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "ab32109b-002b-4c5d-8a91-d851d2ad900b",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1184,
+        176
+      ],
+      "webhookId": "0f4acab2-7c58-49d7-b606-18ea4a979874",
+      "credentials": {
+        "telegramApi": {
+          "id": "6sOYrQvqCAtGfwuf",
+          "name": "Telegram account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://api:8000/api/v1/chat",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"message\": \"{{ $json.message.text }}\",\n  \"user_id\": \"{{ $json.message.from.id }}\",\n  \"channel\": \"telegram\"\n}",
+        "options": {}
+      },
+      "id": "d4fe2841-985e-4138-a171-ce93e4ab44aa",
+      "name": "FastAPI Brain",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        -784,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.escalate_to_human }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "835aa4a4-9436-489c-b393-bce93adb5339",
+      "name": "Check Escalation",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -592,
+        48
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "8699746636",
+        "text": "=⚠️ *ESCALAMIENTO REQUERIDO*\n\nSe necesita intervención humana.\nMotivo: Fuera de Scope\nCategoría: {{ $json.category }}",
+        "additionalFields": {}
+      },
+      "id": "f37f2873-631b-4e99-b88b-a1d9238364ad",
+      "name": "Alerta a Admin (TG)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        -384,
+        -64
+      ],
+      "webhookId": "aaffa6f0-7703-4464-9998-c2fa1724f8d4",
+      "credentials": {
+        "telegramApi": {
+          "id": "6sOYrQvqCAtGfwuf",
+          "name": "Telegram account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $('FastAPI Brain').item.json.channel }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "telegram"
+            },
+            {
+              "value2": "web",
+              "output": 1
+            }
+          ]
+        },
+        "fallbackOutput": 0
+      },
+      "id": "a3852b5a-850e-45f7-814c-2723aa2edd76",
+      "name": "Switch Canal",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        -592,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('FastAPI Brain').item.json.user_id }}",
+        "text": "={{ $('FastAPI Brain').item.json.answer }}",
+        "additionalFields": {}
+      },
+      "id": "c58d7026-9ff1-4d5b-9fbb-d137063c1343",
+      "name": "Responder a Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        -384,
+        192
+      ],
+      "webhookId": "14a7518a-9f77-4d7d-8bcf-494b8c6c1d58",
+      "credentials": {
+        "telegramApi": {
+          "id": "6sOYrQvqCAtGfwuf",
+          "name": "Telegram account 3"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "FastAPI Brain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FastAPI Brain": {
+      "main": [
+        [
+          {
+            "node": "Check Escalation",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Switch Canal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Escalation": {
+      "main": [
+        [
+          {
+            "node": "Alerta a Admin (TG)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch Canal": {
+      "main": [
+        [
+          {
+            "node": "Responder a Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "f48654a5-a5d3-4236-9f34-6cbcabea303b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7981a3f4561f4efa5472b1f54ba7edcb040fc3d0bf572dcddb124ff2764f1071"
+  },
+  "id": "QaP2p2h3rIH8OvMl",
+  "tags": []
+}
