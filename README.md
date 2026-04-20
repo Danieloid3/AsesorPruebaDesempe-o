@@ -82,6 +82,21 @@ A sample workflow file is included in this repository (`n8n_multicanal_workflow.
      embedding vector(1536)
    );
 
+   -- Create chat_logs table for analytics and observability
+   create table chat_logs (
+     id bigserial primary key,
+     created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+     user_id text,
+     channel text,
+     user_query text,
+     ai_answer text,
+     escalate_to_human boolean,
+     category text,
+     cache_hit boolean,
+     cost numeric,
+     tokens_used integer
+   );
+
    -- Create matching function (RPC) for RAG
    create or replace function match_documents (
      query_embedding vector(1536),
