@@ -2,6 +2,10 @@
 
 This is a production-ready AI customer support backend built with FastAPI, OpenAI, and Supabase (pgvector). It processes user queries, retrieves relevant context from a vector database (RAG - Retrieval-Augmented Generation), and generates grounded answers. 
 
+## 🌐 Live Deployments
+- **Backend API (Render):** [https://asesor-ai-backend.onrender.com](https://asesor-ai-backend.onrender.com)
+- **Admin Dashboard (Lovable):** [https://linguatech-ai-compass.lovable.app/](https://linguatech-ai-compass.lovable.app/)
+
 ## Features
 - **Retrieval-Augmented Generation (RAG):** Context strictly restricted to the academy's specific documents.
 - **Workflow Automation Setup:** Ready to interact with n8n multichannel workflows via Webhooks.
@@ -11,6 +15,7 @@ This is a production-ready AI customer support backend built with FastAPI, OpenA
 
 ## Architecture
 
+- **Frontend Dashboard:** A rich UI generated with Lovable to monitor operations, review escalated chats, and check metrics.
 - `core/`: Application settings and database connections.
 - `routers/`: FastAPI routes (e.g., chat/webhook endpoints).
 - `schemas/`: Pydantic models for predictable and validated data contracts.
@@ -22,7 +27,21 @@ This is a production-ready AI customer support backend built with FastAPI, OpenA
 - Python 3.10+
 - OpenAI API Key
 - Supabase Project (with Vector Extension enabled)
+- n8n instance (Local, Cloud, or Docker)
 - (Optional) Redis server for caching
+
+## Automation Workflow (n8n)
+
+This backend is designed to be fully integrated with **n8n** for handling multichannel messaging (Telegram, WhatsApp, Web, etc.).
+
+1. **Webhook Trigger:** n8n listens for incoming messages from users (e.g., via Telegram).
+2. **AI Processing:** n8n sends an HTTP POST request to the API `chat` endpoint containing the message and user ID.
+3. **Decision Branch (Switch):**
+   - If `escalate_to_human` is `false`, n8n replies directly to the user with the AI's provided `answer`.
+   - If `escalate_to_human` is `true`, n8n routes the message to a human agent's inbox (or Slack/Telegram group) along with the `category` and context.
+4. **Metrics:** Real-time logging of `cache_hit`, `confidence`, and `cost` straight into your dashboard.
+
+A sample workflow file is included in this repository (`n8n_multicanal_workflow.json`). You can import this directly into your n8n workspace to get started immediately.
 
 ## Setup & Installation
 
@@ -62,7 +81,7 @@ This is a production-ready AI customer support backend built with FastAPI, OpenA
 
 ## Usage (API)
 
-**Endpoint:** `POST /chat`
+**1. Chat Endpoint:** `POST /api/v1/chat`
 
 ```json
 {
@@ -81,6 +100,9 @@ This is a production-ready AI customer support backend built with FastAPI, OpenA
   "cache_hit": false
 }
 ```
+
+**2. Ingestion Endpoint:** `POST /api/v1/ingest/`
+Triggers a background task to process, chunk, and embed `.txt` files from the `docs/` folder into Supabase without blocking the API.
 
 ## Running with Docker
 
