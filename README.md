@@ -68,13 +68,53 @@ A sample workflow file is included in this repository (`n8n_multicanal_workflow.
    - `SUPABASE_URL`
    - `SUPABASE_KEY`
 
-4. **Ingest Documents:**
+4. **Supabase Database Setup:**
+   Run the following SQL code in your Supabase dashboard (SQL Editor) to enable Vector search and create the necessary schemas:
+   ```sql
+   -- Enable pgvector extension
+   create extension if not exists vector;
+
+   -- Create documents table
+   create table documents (
+     id bigserial primary key,
+     content text,
+     metadata jsonb,
+     embedding vector(1536)
+   );
+
+   -- Create matching function (RPC) for RAG
+   create or replace function match_documents (
+     query_embedding vector(1536),
+     match_threshold float,
+     match_count int
+   )
+   returns table (
+     id bigint,
+     content text,
+     metadata jsonb,
+     similarity float
+   )
+   language sql stable
+   as $$
+     select
+       documents.id,
+       documents.content,
+       documents.metadata,
+       1 - (documents.embedding <=> query_embedding) as similarity
+     from documents
+     where 1 - (documents.embedding <=> query_embedding) > match_threshold
+     order by documents.embedding <=> query_embedding
+     limit match_count;
+   $$;
+   ```
+
+5. **Ingest Documents:**
    Convert text documents from `docs/` into embeddings and store them in the vector database:
    ```bash
    python ingest.py
    ```
 
-5. **Start the API server:**
+6. **Start the API server:**
    ```bash
    uvicorn main:app --reload
    ```
