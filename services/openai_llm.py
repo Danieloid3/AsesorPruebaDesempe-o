@@ -55,7 +55,7 @@ def generate_rag_answer(query: str, context: str, history: list = None) -> dict:
         model="gpt-4o-mini",
         messages=messages,
         response_format=AIResponse,
-        temperature=0.0,
+        temperature=0.2,
     )
 
     # Calculate Estimated Cost
