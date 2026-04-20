@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers.chat import router as chat_router
+from routers.ingest import router as ingest_router
 
 app = FastAPI(
     title="Asesor AI Backend",
@@ -19,6 +20,7 @@ app.add_middleware(
 
 # Endpoints mapping
 app.include_router(chat_router, prefix="/api/v1")
+app.include_router(ingest_router, prefix="/api/v1")
 
 @app.get("/")
 def health_check():
