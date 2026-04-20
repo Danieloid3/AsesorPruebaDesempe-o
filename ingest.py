@@ -48,30 +48,37 @@ def main():
                 print(f"  Warning (Could not clean, ignore if first time running or missing permissions): {e}")
 
             file_path = os.path.join(DOCS_DIR, filename)
-            with open(file_path, "r", encoding="utf-8") as file:
-                content = file.read()
+            try:
+                try:
+                    with open(file_path, "r", encoding="utf-8") as file:
+                        content = file.read()
+                except UnicodeDecodeError:
+                    with open(file_path, "r", encoding="latin-1") as file:
+                        content = file.read()
 
-            # Create chunks
-            chunks = text_splitter.split_text(content)
-            print(f"Processing {filename}: {len(chunks)} chunks generated.")
+                # Create chunks
+                chunks = text_splitter.split_text(content)
+                print(f"Processing {filename}: {len(chunks)} chunks generated.")
 
-            for i, chunk in enumerate(chunks):
-                # Request embedding
-                embedding = embed_text(chunk)
+                for i, chunk in enumerate(chunks):
+                    # Request embedding
+                    embedding = embed_text(chunk)
 
-                # Prepare metadata and document record
-                document_data = {
-                    "content": chunk,
-                    "metadata": {
-                        "source": filename,
-                        "chunk_index": i
-                    },
-                    "embedding": embedding
-                }
+                    # Prepare metadata and document record
+                    document_data = {
+                        "content": chunk,
+                        "metadata": {
+                            "source": filename,
+                            "chunk_index": i
+                        },
+                        "embedding": embedding
+                    }
 
-                # Insert into Supabase `documents` table
-                response = supabase.table("documents").insert(document_data).execute()
-                print(f"  Inserted chunk {i} for {filename}")
+                    # Insert into Supabase `documents` table
+                    response = supabase.table("documents").insert(document_data).execute()
+                    print(f"  Inserted chunk {i} for {filename}")
+            except Exception as e:
+                print(f"  [ERROR] Se detuvo el procesamiento de {filename} por un error: {e}")
 
 if __name__ == "__main__":
     main()

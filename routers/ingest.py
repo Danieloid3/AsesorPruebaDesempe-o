@@ -17,6 +17,13 @@ def run_ingestion_process():
     supabase: Client = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
     openai_client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
+    def embed_text(text: str) -> list[float]:
+        response = openai_client.embeddings.create(
+            input=text,
+            model="text-embedding-3-small"
+        )
+        return response.data[0].embedding
+
     DOCS_DIR = "docs"
 
     if not os.path.exists(DOCS_DIR):
@@ -38,28 +45,32 @@ def run_ingestion_process():
                 print(f"  Warning: {e}")
 
             file_path = os.path.join(DOCS_DIR, filename)
-            with open(file_path, "r", encoding="utf-8") as file:
-                content = file.read()
+            try:
+                # Try UTF-8 first, fallback to latin-1
+                try:
+                    with open(file_path, "r", encoding="utf-8") as file:
+                        content = file.read()
+                except UnicodeDecodeError:
+                    with open(file_path, "r", encoding="latin-1") as file:
+                        content = file.read()
 
-            chunks = text_splitter.split_text(content)
+                chunks = text_splitter.split_text(content)
+                print(f"Processing {filename}: {len(chunks)} chunks generated.")
 
-            for i, chunk in enumerate(chunks):
-                response = openai_client.embeddings.create(
-                    input=chunk,
-                    model="text-embedding-3-small"
-                )
-                embedding = response.data[0].embedding
-
-                document_data = {
-                    "content": chunk,
-                    "metadata": {
-                        "source": filename,
-                        "chunk_index": i
-                    },
-                    "embedding": embedding
-                }
-
-                supabase.table("documents").insert(document_data).execute()
+                for i, chunk in enumerate(chunks):
+                    embedding = embed_text(chunk)
+                    document_data = {
+                        "content": chunk,
+                        "metadata": {
+                            "source": filename,
+                            "chunk_index": i
+                        },
+                        "embedding": embedding
+                    }
+                    supabase.table("documents").insert(document_data).execute()
+                    print(f"  Inserted chunk {i} for {filename}")
+            except Exception as e:
+                print(f"  Error processing file {filename}: {e}")
 
 @router.post("/", response_model=IngestResponse)
 async def trigger_ingestion(background_tasks: BackgroundTasks):
