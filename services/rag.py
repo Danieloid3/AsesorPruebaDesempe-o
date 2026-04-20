@@ -9,7 +9,7 @@ def embed_query(query: str) -> list[float]:
     )
     return response.data[0].embedding
 
-def retrieve_documents(embedding: list[float], match_threshold: float = 0.5, match_count: int = 4) -> str:
+def retrieve_documents(embedding: list[float], match_threshold: float = 0.4, match_count: int = 4) -> str:
     """Search vector database by calling Supabase RPC match_documents, format context."""
 
     # We use the RPC defined in your instructions: match_documents(query_embedding, match_threshold, match_count)
