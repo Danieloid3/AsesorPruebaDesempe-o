@@ -24,7 +24,10 @@ Nuestra metodología "Tech-Immersive Learning" combina el enfoque comunicativo t
 
 2. MODALIDADES DE ESTUDIO
 Nuestros estudiantes pueden elegir entre tres modalidades flexibles:
-- Modalidad Presencial: Clases impartidas en nuestras sedes físicas ubicadas en Medellín (Sede Poblado y Sede Laureles) y Bogotá (Sede Chapinero). Grupos máximos de 12 personas.
+- Modalidad Presencial: Clases impartidas en nuestras sedes físicas. Grupos máximos de 12 personas.
+  * Medellín - Sede Poblado: Carrera 43A # 1-50, Centro Comercial Oviedo (Local 402).
+  * Medellín - Sede Laureles: Circular 73B # 39B-20, cerca al Primer Parque.
+  * Bogotá - Sede Chapinero: Carrera 13 # 65-10, Edificio TechCenter (Piso 3).
 - Modalidad Virtual (En Vivo): Clases sincrónicas a través de Zoom o Microsoft Teams con docentes en vivo. No son clases pregrabadas.
 - Modalidad Híbrida: Combinación de 2 días presenciales y 2 días virtuales a la semana.
 
@@ -41,3 +44,13 @@ Programa Intensivo (Lunes a Viernes - 4 horas diarias):
 
 Programa Sabatino (Solo Sábados - 5 horas intensivas):
 - Único horario: 8:00 AM a 1:00 PM.
+
+4. FECHAS DE INICIO (CALENDARIO ACADÉMICO)
+- Programas Regulares e Intensivos: Inician el primer y tercer lunes de cada mes.
+- Programas Sabatinos: Inician el primer sábado de cada mes.
+- Kids & Teens: Inician únicamente en los meses de enero, junio y septiembre.
+
+5. PERFIL DOCENTE
+Nuestro equipo académico está compuesto por una mezcla de profesionales bilingües locales y hablantes nativos.
+- Todos los profesores cuentan con certificaciones internacionales de enseñanza de idiomas (TEFL, TESOL o CELTA) y un nivel mínimo certificado de C1.
+- Implementamos un sistema de "Rotación Docente" cada final de mes para que los estudiantes adapten su oído a diferentes acentos (americano, británico, australiano, etc.).

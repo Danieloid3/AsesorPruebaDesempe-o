@@ -23,3 +23,10 @@ Para aprobar cualquier nivel en LinguaTech Academy, el estudiante debe cumplir c
 Al finalizar exitosamente el nivel C1, los estudiantes son invitados a nuestra ceremonia de graduación anual (realizada en noviembre de cada año).
 - Requisitos: Haber cursado al menos los niveles B2 y C1 en LinguaTech Academy y tener paz y salvo financiero.
 - Los mejores promedios (Top 3) de cada cohorte reciben una beca del 100% para el curso de preparación para exámenes internacionales (TOEFL/IELTS).
+
+5. REQUISITOS TÉCNICOS PARA CLASES VIRTUALES
+Para el correcto desarrollo de la modalidad Virtual o Híbrida y para garantizar el avance académico del estudiante, se requiere:
+- Computador (PC, Mac) o Tablet con excelente capacidad de procesamiento y cámara incorporada. (No se recomienda tomar las clases desde un teléfono celular debido a la dificultad con los materiales de lectura).
+- Conexión a internet estable de mínimo 15 Megas de descarga por segundo.
+- Auriculares con micrófono integrado para evitar el eco y aislar los ruidos de fondo.
+- Como norma fundamental, la cámara debe permanecer encendida durante toda la clase, ya que la evaluación del speaking depende de la gesticulación y la interacción activa grupal. El docente podrá marcar "inasistencia" a quien no cumpla con esta regla.
