@@ -87,3 +87,22 @@ def get_dashboard_metrics() -> dict:
     except Exception as e:
         print(f"Failed to retrieve metrics: {e}")
         return {}
+
+def get_all_cached_faqs() -> list:
+    """Retrieve all cached FAQs from Redis."""
+    try:
+        keys = redis_client.keys("chat_cache:*")
+        faqs = []
+        for key in keys:
+            normalized_query = key.replace("chat_cache:", "")
+            data = redis_client.get(key)
+            if data:
+                parsed_data = json.loads(data)
+                faqs.append({
+                    "normalized_query": normalized_query,
+                    "answer": parsed_data.get("answer", "")
+                })
+        return faqs
+    except Exception as e:
+        print(f"Failed to retrieve FAQs: {e}")
+        return []

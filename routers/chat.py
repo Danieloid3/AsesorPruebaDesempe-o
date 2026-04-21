@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from schemas.chat import ChatRequest, ChatResponse
-from services.cache import get_cached_response, set_cached_response, get_chat_history, add_to_chat_history, log_metrics, get_dashboard_metrics
+from services.cache import get_cached_response, set_cached_response, get_chat_history, add_to_chat_history, log_metrics, get_dashboard_metrics, get_all_cached_faqs
 from services.rag import orchestrate_rag_pipeline
 from services.analytics import save_chat_log
 import traceback
@@ -124,3 +124,8 @@ async def process_chat(request: ChatRequest):
 async def process_metrics():
     """Returns basic performance and cost metrics for the business."""
     return get_dashboard_metrics()
+
+@router.get("/faqs")
+async def process_faqs():
+    """Returns all cached FAQs from Redis."""
+    return get_all_cached_faqs()
