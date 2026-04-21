@@ -47,6 +47,9 @@ async def process_chat(request: ChatRequest):
                 "tokens_used": 0
             })
 
+            # Append cache hit to conversation history to keep context
+            add_to_chat_history(user_id, user_query, cached_res.get("answer", ""))
+
             return ChatResponse(**cached_res)
 
     try:
