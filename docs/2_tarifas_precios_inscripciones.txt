@@ -5,13 +5,33 @@ FECHA DE ACTUALIZACIÓN: Enero 2026
 1. TARIFAS Y PRECIOS 2026
 Todos nuestros precios están expresados en Pesos Colombianos (COP) e incluyen el material de estudio digital.
 
-- Matrícula Anual: $120,000 COP (Se paga una sola vez al año sin importar los niveles cursados).
-- Curso Regular (Niveles A1, A2 - 3 meses): $950,000 COP por nivel.
-- Curso Intermedio (Niveles B1, B2 - 4 meses): $1,250,000 COP por nivel.
-- Curso Avanzado (Nivel C1 - 6 meses): $1,800,000 COP por nivel.
-- Programa Intensivo (Cualquier nivel completado en 1 mes): $850,000 COP por mes.
-- Programas Especializados (Business English, Viajeros, Kids & Teens): $1,100,000 COP por curso completo.
-- Tutorías Personalizadas (1-on-1): Paquete de 10 horas por $600,000 COP.
+- Matrícula Anual:
+  * Precio: $120,000 COP.
+  * Frecuencia: Se paga una sola vez al año sin importar los niveles cursados.
+
+- Curso Regular (Niveles A1, A2):
+  * Precio: $950,000 COP por nivel.
+  * Duración por nivel: 3 meses.
+
+- Curso Intermedio (Niveles B1, B2):
+  * Precio: $1,250,000 COP por nivel.
+  * Duración por nivel: 4 meses.
+
+- Curso Avanzado (Nivel C1):
+  * Precio: $1,800,000 COP por nivel.
+  * Duración por nivel: 6 meses.
+
+- Programa Intensivo:
+  * Precio: $850,000 COP por mes.
+  * Aclaración: Cualquier nivel se completa en 1 mes bajo esta modalidad.
+
+- Programas Especializados:
+  * Precio: $1,100,000 COP por curso completo.
+  * Aplica para: Business English, Viajeros, Kids & Teens.
+
+- Tutorías Personalizadas (1-on-1):
+  * Precio: $600,000 COP.
+  * Descripción: Paquete de 10 horas exclusivas.
 
 *Nota de descuentos:
 - Ofrecemos un 10% de descuento por pago anticipado de 2 o más niveles continuos.

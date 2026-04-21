@@ -4,17 +4,44 @@ FECHA DE ACTUALIZACIÓN: Enero 2026
 
 1. NIVELES DE INGLÉS (Basados en el Marco Común Europeo de Referencia - MCER)
 Ofrecemos un currículo estructurado en 5 niveles principales para adultos y jóvenes:
-- Nivel A1 (Principiante): Duración de 3 meses. Enfoque en vocabulario básico y expresiones cotidianas.
-- Nivel A2 (Básico): Duración de 3 meses. Capacidad para comunicarse en tareas simples y habituales.
-- Nivel B1 (Intermedio): Duración de 4 meses. Fluidez para viajes, trabajo general y redacción de textos simples.
-- Nivel B2 (Intermedio Alto): Duración de 4 meses. Comprensión de textos complejos y fluidez para interactuar con hablantes nativos.
-- Nivel C1 (Avanzado): Duración de 6 meses. Uso flexible y eficaz del idioma para fines sociales, académicos y profesionales.
+
+- Nivel A1 (Principiante):
+  * Duración: 3 meses.
+  * Enfoque: Vocabulario básico y expresiones cotidianas.
+
+- Nivel A2 (Básico):
+  * Duración: 3 meses.
+  * Enfoque: Capacidad para comunicarse en tareas simples y habituales.
+
+- Nivel B1 (Intermedio):
+  * Duración: 4 meses.
+  * Enfoque: Fluidez para viajes, trabajo general y redacción de textos simples.
+
+- Nivel B2 (Intermedio Alto):
+  * Duración: 4 meses.
+  * Enfoque: Comprensión de textos complejos y fluidez para interactuar con hablantes nativos.
+
+- Nivel C1 (Avanzado):
+  * Duración: 6 meses.
+  * Enfoque: Uso flexible y eficaz del idioma para fines sociales, académicos y profesionales.
 
 1.1 PROGRAMAS ESPECIALIZADOS
 Además del currículo general, LinguaTech Academy ofrece programas con propósitos específicos:
-- Business English (Inglés de Negocios): Duración de 4 meses. Requiere nivel B1 mínimo. Enfocado en presentaciones, redacción de correos corporativos, negociaciones y vocabulario empresarial.
-- Inglés para Viajeros: Curso intensivo de 2 meses. Diseñado para personas que necesitan vocabulario práctico y de supervivencia para turismo, aeropuertos, hoteles y restaurantes. No requiere nivel previo.
-- Kids & Teens (Niños y Adolescentes): Programas adaptados para edades entre 7 y 14 años, con metodología lúdica y gamificación. Clases únicamente los fines de semana o en horario extracurricular (4:00 PM a 6:00 PM).
+
+- Business English (Inglés de Negocios):
+  * Duración: 4 meses.
+  * Requisito: Nivel B1 mínimo.
+  * Enfoque: Presentaciones, redacción de correos corporativos, negociaciones y vocabulario empresarial.
+
+- Inglés para Viajeros:
+  * Duración: 2 meses (Curso Intensivo).
+  * Requisito: No requiere nivel previo.
+  * Enfoque: Vocabulario práctico y de supervivencia para turismo, aeropuertos, hoteles y restaurantes.
+
+- Kids & Teens (Niños y Adolescentes):
+  * Público objetivo: Edades entre 7 y 14 años.
+  * Metodología: Lúdica y gamificación.
+  * Horario: Fines de semana o en horario extracurricular (4:00 PM a 6:00 PM).
 
 1.2 METODOLOGÍA DE ENSEÑANZA
 Nuestra metodología "Tech-Immersive Learning" combina el enfoque comunicativo tradicional con herramientas de inteligencia artificial.
@@ -24,26 +51,29 @@ Nuestra metodología "Tech-Immersive Learning" combina el enfoque comunicativo t
 
 2. MODALIDADES DE ESTUDIO
 Nuestros estudiantes pueden elegir entre tres modalidades flexibles:
-- Modalidad Presencial: Clases impartidas en nuestras sedes físicas. Grupos máximos de 12 personas.
-  * Medellín - Sede Poblado: Carrera 43A # 1-50, Centro Comercial Oviedo (Local 402).
-  * Medellín - Sede Laureles: Circular 73B # 39B-20, cerca al Primer Parque.
-  * Bogotá - Sede Chapinero: Carrera 13 # 65-10, Edificio TechCenter (Piso 3).
+- Modalidad Presencial: Clases impartidas en nuestras sedes físicas (ver sección 2.1). Grupos máximos de 12 personas.
 - Modalidad Virtual (En Vivo): Clases sincrónicas a través de Zoom o Microsoft Teams con docentes en vivo. No son clases pregrabadas.
 - Modalidad Híbrida: Combinación de 2 días presenciales y 2 días virtuales a la semana.
+
+2.1 DIRECCIONES Y UBICACIÓN DE LAS SEDES FÍSICAS
+Contamos con instalaciones modernas equipadas con tecnología de punta en las siguientes ciudades:
+- Sede Medellín - Poblado: Carrera 43A # 1-50, Centro Comercial Oviedo (Local 402).
+- Sede Medellín - Laureles: Circular 73B # 39B-20, cerca al Primer Parque.
+- Sede Bogotá - Chapinero: Carrera 13 # 65-10, Edificio TechCenter (Piso 3).
 
 3. HORARIOS DISPONIBLES
 Los horarios están diseñados para adaptarse a diferentes estilos de vida:
 
-Programa Regular (Lunes a Jueves - 2 horas diarias):
-- Franja Mañana: 6:00 AM a 8:00 AM / 8:00 AM a 10:00 AM.
-- Franja Tarde: 4:00 PM a 6:00 PM.
-- Franja Noche: 6:30 PM a 8:30 PM.
+- Programa Regular (2 horas diarias distribuidas de Lunes a Jueves):
+  * Franja Mañana: 6:00 AM a 8:00 AM ó 8:00 AM a 10:00 AM.
+  * Franja Tarde: 4:00 PM a 6:00 PM.
+  * Franja Noche: 6:30 PM a 8:30 PM.
 
-Programa Intensivo (Lunes a Viernes - 4 horas diarias):
-- Único horario: 8:00 AM a 12:00 PM.
+- Programa Intensivo (4 horas diarias de Lunes a Viernes):
+  * Único horario: 8:00 AM a 12:00 PM.
 
-Programa Sabatino (Solo Sábados - 5 horas intensivas):
-- Único horario: 8:00 AM a 1:00 PM.
+- Programa Sabatino (5 horas intensivas, Solo Sábados):
+  * Único horario: 8:00 AM a 1:00 PM.
 
 4. FECHAS DE INICIO (CALENDARIO ACADÉMICO)
 - Programas Regulares e Intensivos: Inician el primer y tercer lunes de cada mes.
